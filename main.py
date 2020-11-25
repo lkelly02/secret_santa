@@ -17,17 +17,21 @@ recipients = ["Lucas", "Andrea", "Ted", "Sheila",
 chosen_gift_giver = []
 chosen_recipient = []
 
-while len(recipients) > 0 and (len(chosen_gift_giver) and len(chosen_recipient)) < len(recipients):
+   
+while len(recipients) > 0:
     for family in families:
         fam1 = family
         for name in fam1:
             if name not in chosen_gift_giver:
-                rand1 = name
                 rand2 = random.choice(recipients)
-                if rand1 != rand2 and rand2 not in fam1:
-                    chosen_gift_giver.append(rand1)
+                while name == rand2 or rand2 in fam1:
+                    rand2 = random.choice(recipients)
+                    if len(recipients) == 1 and recipients == [name]:
+                        print("The code cannot be completed, please try again.")
+                        sys.exit(0)
+                if name != rand2 and rand2 not in fam1:
+                    chosen_gift_giver.append(name)
                     chosen_recipient.append(rand2)
                     recipients.remove(rand2)
-                    print(f"{rand1} has {rand2}")
-                else:
-                    sys.exit
+                    print(f"{name} has {rand2}")
+
