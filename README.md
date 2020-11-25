@@ -1,2 +1,1 @@
-I created this code to be used for anyone that does secret santa with their families for Christmas time. It is designed to pick names that haven't been chosen yet, and to also only pick names of people NOT in the same household. 
-There are definitely things to be changed. But it somewhat works as is. 
+I created this code to be used for anyone that does secret santa with their families or work families. It can be used with multiple households, or just one big group of names. My idea is to eventually make this a small website for anyone to use.
