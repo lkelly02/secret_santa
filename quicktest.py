@@ -1,19 +1,25 @@
+# This file is a quick way to test some of the code in a shorter version than the main file. Run in the terminal.
+
+
 import random
 import sys
 import os
 
+# Clear function is used to clear out the terminal when the the code cannot be completed due to the remaining recipient(s) is either
+# the same as gift giver, or in the same household as the gift giver.
+
+
 def clear():
     os.system("clear")
 
-# # The idea for the family variables, are that they can be created by the user for as many families and family memebers as they want.
-# # Not sure how to do this yet.
-
+# The user will be entering each name in a single household.
 household1 = ["Lucas", "Andrea"]
 household2 = ["Ted", "Sheila"]
 household3 = ["Jake", "Katlyn"]
 household4 = ["Brandan", "Kayla"]
 
 list_of_households = [household1, household2, household3, household4]
+# The entries that the user enters, will also be entered into the recipients list.
 recipients = ["Lucas", "Andrea", "Ted", "Sheila",
               "Jake", "Katlyn", "Brandan", "Kayla"]
 
