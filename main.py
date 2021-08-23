@@ -1,12 +1,7 @@
 import random
 import sys
 import time
-import os
-
-
-def clear():
-    os.system("clear")
-
+from os import system
 
 print("Welcome to the Secret Santa name generator")
 print("Let's start with a few questions:")
@@ -16,6 +11,7 @@ households_or_group = input(
 
 chosen_gift_giver = []
 chosen_recipient = []
+random_recipient = ""
 
 if households_or_group == "households":
     list_of_households = []
@@ -42,7 +38,7 @@ if households_or_group == "households":
                         recipients.extend(chosen_recipient)
                         chosen_gift_giver = []
                         chosen_recipient = []
-                        clear()
+                        system("clear")
                 if name != random_recipient and random_recipient not in household:
                     chosen_gift_giver.append(name)
                     chosen_recipient.append(random_recipient)
@@ -50,13 +46,13 @@ if households_or_group == "households":
                     print(f"{name.title()} has {random_recipient.title()}")
 elif households_or_group == "group":
     individuals_names = input(
-        "Please enter each inividuals name, seperated by a comma and a space: ")
+        "Please enter each individuals name, seperated by a comma and a space: ")
     list_of_individuals = individuals_names.split(", ")
     number_of_individuals = len(list_of_individuals)
     ans = input(
         f"You entered {number_of_individuals} names, is this the correct number of individuals playing? (yes/no) ").lower()
     if ans == "no":
-        print("Sorry, please play again re-enter the names")
+        print("Sorry, please play again and re-enter the names")
         sys.exit(0)
     recipients = individuals_names.split(", ")
     print("Okay, here we go...")
@@ -71,7 +67,7 @@ elif households_or_group == "group":
                     recipients.extend(chosen_recipient)
                     chosen_gift_giver = []
                     chosen_recipient = []
-                    clear()
+                    system("clear")
             if name != random_recipient:
                 chosen_gift_giver.append(name)
                 chosen_recipient.append(random_recipient)
